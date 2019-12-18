@@ -1,0 +1,173 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hola mundo",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "help",
+            "ayúdame",
+            "ayuda"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "cierra",
+            "apagar",
+            "salir",
+            "parar",
+            "stop",
+            "cerrar"
+          ]
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "mundo",
+            "hola mundo",
+            "hola"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CuantosDiasQuedanIntent",
+          "slots": [
+            {
+              "name": "tipo",
+              "type": "tipoFestivo",
+              "samples": [
+                "{tipo}"
+              ]
+            }
+          ],
+          "samples": [
+            "cuánto tiempo falta para {tipo}",
+            "cuántos días falta para {tipo}",
+            "cuánto queda para {tipo}",
+            "cuántos días quedan para {tipo}"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "CuriosidadesNavidadIntent",
+          "slots": [],
+          "samples": [
+            "cuéntame algo de navidad",
+            "dime curiosidades navideñas",
+            "curiosidad navideña",
+            "dime curiosidades de navidad",
+            "dime una curiosidad de navidad"
+          ]
+        },
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "CantaVillancicoIntent",
+          "slots": [],
+          "samples": [
+            "cántame un villancico",
+            "pon sonido navideño",
+            "pon música",
+            "villancico",
+            "canta un villancico"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "tipoFestivo",
+          "values": [
+            {
+              "name": {
+                "value": "nochevieja",
+                "synonyms": [
+                  "treinta y uno"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "año nuevo",
+                "synonyms": [
+                  "día 1",
+                  "día uno"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "reyes",
+                "synonyms": [
+                  "seis de enero"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "navidad",
+                "synonyms": [
+                  "veinticinco"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "nochebuena",
+                "synonyms": [
+                  "veinticuatro"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CuantosDiasQuedanIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "tipo",
+              "type": "tipoFestivo",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.125500608132.1136644870824"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.125500608132.1136644870824",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "A qué día te refieres?"
+          }
+        ]
+      }
+    ]
+  }
+}
